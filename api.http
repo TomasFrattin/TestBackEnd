@@ -1,14 +1,14 @@
 ### Recuperar todas las películas
-GET http://localhost:1234/movies
+GET https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies
 
 ### Recuperar una película por id
-GET http://localhost:1234/movies/a55b1abb-7814-11ee-9321-309c23a2b865
+GET https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies/5597982a-33a9-4504-9d54-3e8e450cda88
 
 ### Recuperar todas las películas por un género
-GET http://localhost:1234/movies?genre=ACTION
+GET https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies?genre=ACTION
 
 ### Crear una película con POST
-POST http://localhost:1234/movies
+POST https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 }
 
 ### Borrar una película
-DELETE http://localhost:1234/movies/64d4d8825d614a4ec5984ae3
+DELETE https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies/5597982a-33a9-4504-9d54-3e8e450cda88
 
 ### Actualizar una película
 PATCH http://localhost:1234/movies/64d4da882f83563ab4f40632

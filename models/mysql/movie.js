@@ -1,8 +1,8 @@
 import mysql from 'mysql2/promise'
 
 const config = {
-  host: 'localhost',
-  user: 'root',
+  host: 'localhossst',
+  user: 'rodaot',
   port: 3306,
   password: 'root',
   database: 'moviesdb'
@@ -86,7 +86,16 @@ export class MovieModel {
   
 
   static async delete ({ id }) {
-
+    try {
+      await connection.query(
+        'DELETE FROM movie WHERE id = UUID_TO_BIN(?);',
+        [id]
+      );
+      return true; // Indica que la eliminación fue exitosa
+    } catch (error) {
+      console.error('Error al eliminar el registro:', error);
+      return false; // Indica que la eliminación falló
+    }
   }
 
   static async update ({ id, input }) {
