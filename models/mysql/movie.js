@@ -1,8 +1,8 @@
 import mysql from 'mysql2/promise'
 
 const config = {
-  host: 'localhossst',
-  user: 'rodaot',
+  host: 'localhost',
+  user: 'root',
   port: 3306,
   password: 'root',
   database: 'moviesdb'

@@ -1,5 +1,5 @@
 ### Recuperar todas las películas
-GET https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies
+GET http://localhost:1234/movies
 
 ### Recuperar una película por id
 GET https://bunbury-goanna-rnff.1.sg-1.fl0.io/movies/5597982a-33a9-4504-9d54-3e8e450cda88
