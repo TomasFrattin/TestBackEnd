@@ -47,7 +47,7 @@ export class MovieModel {
 
   static async create ({ input }) {
     const {
-      genre: genreInput, // genre is an array
+      genre: genreInput,
       title,
       year,
       duration,
@@ -56,9 +56,6 @@ export class MovieModel {
       poster
     } = input
 
-    // todo: crear la conexión de genre
-
-    // crypto.randomUUID()
     const [uuidResult] = await connection.query('SELECT UUID() uuid;')
     const [{ uuid }] = uuidResult
 
@@ -69,10 +66,7 @@ export class MovieModel {
         [title, year, director, duration, poster, rate]
       )
     } catch (e) {
-      // puede enviarle información sensible
       throw new Error('Error creating movie')
-      // enviar la traza a un servicio interno
-      // sendLog(e)
     }
 
     const [movies] = await connection.query(
@@ -91,10 +85,10 @@ export class MovieModel {
         'DELETE FROM movie WHERE id = UUID_TO_BIN(?);',
         [id]
       );
-      return true; // Indica que la eliminación fue exitosa
+      return true;
     } catch (error) {
       console.error('Error al eliminar el registro:', error);
-      return false; // Indica que la eliminación falló
+      return false;
     }
   }
 
